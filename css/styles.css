@@ -28,3 +28,13 @@
     margin: 0px;
     color: #0f0f0f;
 }
+
+/*whenever using fixed top navbar, good to give padding to body so navbar doesn't cover top part of page*/
+body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+
+.navbar-dark{
+    background-color: #512DA8;
+}
