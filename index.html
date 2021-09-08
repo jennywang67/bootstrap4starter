@@ -50,8 +50,8 @@
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contanct</a></li>
                 </ul>
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                <span class="navbar-text" id="mylogin">
+                    <a>
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -65,7 +65,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="myxlog">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="mycancellog">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -111,20 +111,20 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a data-toggle="modal" data-target="#reserveModal">
-                        <button type="submit" class="btn btn-warning" data-html="true" title="Or Call us at <br><strong>+852 123456789</strong>" data-placement="bottom">Reserve Table</button>
+                    <a>
+                        <button type="submit" class="btn btn-warning" id="myreserve" title="Or Call us at <br><strong>+852 123456789</strong>">Reserve Table</button>
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <div id="reserveModal" class="modal fade"" role="dialog">
+    <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog model-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Reserve a Table</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="mymodalx">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="card-body">
@@ -171,10 +171,10 @@
 
                         <div class="form-group row">
                             <div class="offset-md-4 col-md-4">
-                                <button type="reserve" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="reserve" class="btn btn-secondary" id="mycancel">Cancel</button>
                             </div>
                             <div class="col-md-4">
-                                <button type="reserve" class="btn btn-primary">Reserve</button>
+                                <button type="reserve" class="btn btn-primary" id="myreserve">Reserve</button>
                             </div>
                         </div>             
                     </div>
@@ -399,6 +399,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!--js in jquery syntax-->
     <script>
+        //Carousel
         $(document).ready(function(){
             $('#mycarousel').carousel({interval:2000});
             $("#carouselButton").click(function(){
@@ -412,6 +413,41 @@
                     $("#carouselButton").children("span").removeClass('fa-play');
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
+            });
+        });
+        //Modal Reserve Table
+        $(document).ready(function(){
+            $("#myreserve").click(function(){
+                $("#reserveModal").modal("show");
+            });
+        });
+        //Modal Cancel
+        $(document).ready(function(){
+            $("#mycancel").click(function(){
+                $("#reserveModal").modal("hide");
+            });
+        });
+        //Modal Hide
+        $(document).ready(function(){
+            $("#mymodalx").click(function(){
+                $("#reserveModal").modal("hide");
+            });
+        });
+        //Modal Login
+        $(document).ready(function(){
+            $("#mylogin").click(function(){
+                $("#loginModal").modal("show");
+            });
+        });
+        //Modal Cancel
+        $(document).ready(function(){
+            $("#mycancellog").click(function(){
+                $("#loginModal").modal("hide");
+            });
+        });
+        $(document).ready(function(){
+            $("#myxlog").click(function(){
+                $("#loginModal").modal("hide");
             });
         });
     </script>
